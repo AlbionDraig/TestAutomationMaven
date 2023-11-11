@@ -16,3 +16,9 @@ L
 src/test/java/configIni.java,3\9\39dead52d69e80ec5028ffa63411353344a2f36b
 L
 src/test/java/ConfigIni.java,a\d\adee921839b49096c12a57f32111f3a8b9959d6c
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+V
+&src/test/java/LoginPage/LoginTest.java,5\3\5312373f597915b805ec34966590338a9b477c5d
+V
+&src/test/java/LoginPage/LoginPage.java,1\e\1e7c7045aec4333cd68361335148b26ce9c592dd

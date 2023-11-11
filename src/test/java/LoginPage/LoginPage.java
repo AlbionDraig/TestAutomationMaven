@@ -1,10 +1,9 @@
+package LoginPage;
+
+import Utilities.ConfigIni;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 public class LoginPage {
     private WebDriver driver;
@@ -25,6 +24,8 @@ public class LoginPage {
 
     public void openPage() {
         driver.get(configIni.getElementLocator("pageUrl"));
+        //Start maximized
+        driver.manage().window().fullscreen();
         //Set Web Elements
         userName = By.xpath(configIni.getElementLocator("userNameElement"));
         password = By.xpath(configIni.getElementLocator("passwordElement"));
@@ -50,9 +51,6 @@ public class LoginPage {
         System.out.println("Password obtained: " + Password);
         //Set password
         driver.findElement(passwordField).sendKeys(Password);
-    }
-
-    public void clickLoginButton() {
         //Click on Login
         driver.findElement(loginButton).click();
     }
