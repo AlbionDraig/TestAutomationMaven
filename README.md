@@ -28,7 +28,7 @@ mvn clean install test
 
 ## Configuración del navegador
 Puedes configurar el navegador y otras opciones en el archivo
-`src/test/resources/config.properties`.
+`src/test/resources/config.ini`.
 
 ## Estructura del proyecto
 - `src/test/java`: Clases de prueba de Selenium.
