@@ -1,6 +1,9 @@
+package LoginPage;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -13,7 +16,9 @@ public class LoginTest {
     @BeforeTest
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        driver = new ChromeDriver(chromeOptions);
         loginPage = new LoginPage(driver);
     }
 
@@ -23,10 +28,9 @@ public class LoginTest {
         loginPage.openPage();
         loginPage.enterUsername();
         loginPage.enterPassword();
-        loginPage.clickLoginButton();
-        boolean sucessfullLoggin = loginPage.validateLogin();
+        boolean successLogin = loginPage.validateLogin();
         //Test
-        Assert.assertFalse(sucessfullLoggin, "Failed Loggin");
+        Assert.assertFalse(successLogin, "Failed Login");
     }
 
     @AfterTest
